@@ -1,0 +1,328 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "de_reg",
+    "url": "/d/VpXYseq7z/de_reg",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-07-01T19:02:47+05:30",
+    "updated": "2022-07-05T18:03:52+05:30",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 22,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 154,
+    "folderUid": "sfM3F637z",
+    "folderTitle": "RNS",
+    "folderUrl": "/dashboards/f/sfM3F637z/rns",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 160,
+    "iteration": 1657024279816,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "postgres",
+          "uid": "_uB9FLQ7z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "align": "center",
+              "displayMode": "color-background-solid"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-blue",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 3,
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": []
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "_uB9FLQ7z"
+            },
+            "format": "table",
+            "group": [],
+            "metricColumn": "none",
+            "rawQuery": true,
+            "rawSql": "SELECT\n  evt_time AS \"time\",\n  f_ue_deregistration.*\nFROM f_ue_deregistration\nWHERE\n  $__timeFilter(evt_time) AND s_bcnid in (${de_reg:singlequote}) \nORDER BY 1",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "reg_time"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "f_ue_deregistration",
+            "timeColumn": "evt_time",
+            "timeColumnType": "timestamptz",
+            "where": [
+              {
+                "name": "$__timeFilter",
+                "params": [],
+                "type": "macro"
+              }
+            ]
+          }
+        ],
+        "title": "De_Registration Details",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "time": true
+              },
+              "indexByName": {},
+              "renameByName": {
+                "cndomain": "CN_DOMAIN",
+                "deregistrationcause": "DE_REGISTRATION_CAUSE",
+                "evt_time": "EVENT_Time",
+                "mcplna": "MCPLNA",
+                "prefsatid": "PREFSATID",
+                "prefsatlongitude": "PREFSATIONGITUDE",
+                "ranbctid": "RANBCTID",
+                "redegresult": "REDEGRESULT",
+                "reg_time": "REG_Time",
+                "rnccause": "RNCCAUSE",
+                "s_bcnid": "S_BCNID",
+                "spotbeamid": "SPOT_BEAM_ID",
+                "time": "",
+                "ueid": "UE_ID",
+                "uetlli": "UETILLI"
+              }
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "postgres",
+          "uid": "_uB9FLQ7z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-blue",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 11,
+          "w": 24,
+          "x": 0,
+          "y": 4
+        },
+        "id": 4,
+        "options": {
+          "displayMode": "gradient",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "last"
+            ],
+            "fields": "/.*/",
+            "values": false
+          },
+          "showUnfilled": true
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "_uB9FLQ7z"
+            },
+            "format": "table",
+            "group": [],
+            "metricColumn": "none",
+            "rawQuery": true,
+            "rawSql": "SELECT\n  evt_time AS \"time\",\n  f_ue_deregistration.*\nFROM f_ue_deregistration\nWHERE\n  $__timeFilter(evt_time) AND s_bcnid in (${de_reg:singlequote}) \nORDER BY 1",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "reg_time"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "f_ue_deregistration",
+            "timeColumn": "evt_time",
+            "timeColumnType": "timestamptz",
+            "where": [
+              {
+                "name": "$__timeFilter",
+                "params": [],
+                "type": "macro"
+              }
+            ]
+          }
+        ],
+        "title": "De_Registration Details",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "evt_time": true,
+                "reg_time": true,
+                "time": true
+              },
+              "indexByName": {},
+              "renameByName": {
+                "cndomain": "CN_DOMAIN",
+                "deregistrationcause": "DE_REGISTRATION_CAUSE",
+                "evt_time": "EVENT_Time",
+                "mcplna": "MCPLNA",
+                "prefsatid": "PREFSATID",
+                "prefsatlongitude": "PREFSATIONGITUDE",
+                "ranbctid": "RANBCTID",
+                "redegresult": "REDEGRESULT",
+                "reg_time": "REG_Time",
+                "rnccause": "RNCCAUSE",
+                "s_bcnid": "S_BCNID",
+                "spotbeamid": "SPOT_BEAM_ID",
+                "time": "",
+                "ueid": "UE_ID",
+                "uetlli": "UETILLI"
+              }
+            }
+          }
+        ],
+        "type": "bargauge"
+      }
+    ],
+    "schemaVersion": 34,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": true,
+            "text": [
+              "All"
+            ],
+            "value": [
+              "$__all"
+            ]
+          },
+          "datasource": {
+            "type": "postgres",
+            "uid": "_uB9FLQ7z"
+          },
+          "definition": "select s_bcnid from f_ue_common_id;",
+          "hide": 2,
+          "includeAll": true,
+          "multi": true,
+          "name": "de_reg",
+          "options": [],
+          "query": "select s_bcnid from f_ue_common_id;",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-30d",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "DE_REG",
+    "uid": "VpXYseq7z",
+    "version": 22,
+    "weekStart": ""
+  }
+}

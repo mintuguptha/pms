@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "syslog-newdashboard",
+    "url": "/d/HsahJyqnk/syslog-newdashboard",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-06-28T14:40:03+05:30",
+    "updated": "2022-06-30T12:24:55+05:30",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 67,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 0,
+    "folderUid": "",
+    "folderTitle": "General",
+    "folderUrl": "",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 149,
+    "iteration": 1656567056613,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "content": "${facilitycodes}",
+          "mode": "markdown"
+        },
+        "pluginVersion": "8.3.3",
+        "title": "Panel Title",
+        "type": "text"
+      }
+    ],
+    "schemaVersion": 34,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": true,
+            "text": "user-level messages",
+            "value": "user-level messages"
+          },
+          "datasource": {
+            "type": "postgres",
+            "uid": "_uB9FLQ7z"
+          },
+          "definition": "select \ncase\nwhen id = '0' then 'kernel messages'\nwhen id = '1' then 'user-level messages'\nwhen id = '2' then 'Mail system'\nwhen id = '3' then 'System Deamons'\nwhen id = '4' then 'Auth'\nwhen id = '5' then 'Syslog'\nwhen id = '6' then 'Line printer subsystem'\nwhen id = '7' then 'Network'\nwhen id = '8' then 'UUCP SubSystem'\nwhen id = '9' then 'cron subsystem'\nwhen id = '10' then 'Auth priv'\nend\nfrom fc;",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "facilityNames",
+          "options": [],
+          "query": "select \ncase\nwhen id = '0' then 'kernel messages'\nwhen id = '1' then 'user-level messages'\nwhen id = '2' then 'Mail system'\nwhen id = '3' then 'System Deamons'\nwhen id = '4' then 'Auth'\nwhen id = '5' then 'Syslog'\nwhen id = '6' then 'Line printer subsystem'\nwhen id = '7' then 'Network'\nwhen id = '8' then 'UUCP SubSystem'\nwhen id = '9' then 'cron subsystem'\nwhen id = '10' then 'Auth priv'\nend\nfrom fc;",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "1",
+            "value": "1"
+          },
+          "datasource": {
+            "type": "postgres",
+            "uid": "_uB9FLQ7z"
+          },
+          "definition": "select \ncase\nwhen  ('kernel messages' = '$facilityNames') then '0'\nwhen  ('user-level messages' = '$facilityNames') then '1'\nwhen  ('Mail system' = '$facilityNames') then '2'\nwhen  ('System Deamons' = '$facilityNames') then '3'\nwhen  ('Auth' = '$facilityNames') then '4'\nwhen  ('Syslog' = '$facilityNames') then '5'\nwhen  ('Line printer subsystem' = '$facilityNames') then '6'\nwhen  ('Network' = '$facilityNames') then '7'\nwhen  ('UUCP SubSystem' = '$facilityNames') then '8'\nwhen  ('cron subsystem' = '$facilityNames') then '9'\nwhen  ('Auth priv' = '$facilityNames') then '10'\nend",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "facilitycodes",
+          "options": [],
+          "query": "select \ncase\nwhen  ('kernel messages' = '$facilityNames') then '0'\nwhen  ('user-level messages' = '$facilityNames') then '1'\nwhen  ('Mail system' = '$facilityNames') then '2'\nwhen  ('System Deamons' = '$facilityNames') then '3'\nwhen  ('Auth' = '$facilityNames') then '4'\nwhen  ('Syslog' = '$facilityNames') then '5'\nwhen  ('Line printer subsystem' = '$facilityNames') then '6'\nwhen  ('Network' = '$facilityNames') then '7'\nwhen  ('UUCP SubSystem' = '$facilityNames') then '8'\nwhen  ('cron subsystem' = '$facilityNames') then '9'\nwhen  ('Auth priv' = '$facilityNames') then '10'\nend",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "syslog newdashboard",
+    "uid": "HsahJyqnk",
+    "version": 67,
+    "weekStart": ""
+  }
+}

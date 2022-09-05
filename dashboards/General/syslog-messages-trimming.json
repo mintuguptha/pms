@@ -1,0 +1,781 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "syslog-messages-trimming",
+    "url": "/d/19GLCUj7k/syslog-messages-trimming",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-06-16T17:16:52+05:30",
+    "updated": "2022-06-28T18:19:56+05:30",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 61,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 0,
+    "folderUid": "",
+    "folderTitle": "General",
+    "folderUrl": "",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 141,
+    "iteration": 1656420423854,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "gridPos": {
+          "h": 3,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 8,
+        "options": {
+          "content": "<h1>${facilitycodes}</h1>\n<h1>${facilitynames}</h1>\n",
+          "mode": "html"
+        },
+        "pluginVersion": "8.3.3",
+        "type": "text"
+      },
+      {
+        "gridPos": {
+          "h": 3,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "id": 9,
+        "options": {
+          "content": "\n${custom}\n\n${variableTextValue}",
+          "mode": "html"
+        },
+        "pluginVersion": "8.3.3",
+        "title": "custom",
+        "type": "text"
+      },
+      {
+        "collapsed": true,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 3
+        },
+        "id": 6,
+        "panels": [
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "_uB9FLQ7z"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "align": "auto",
+                  "displayMode": "auto"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "numbers This is used for trimming"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 204
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "numbers"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 94
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "time"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 161
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 9,
+              "x": 0,
+              "y": 1
+            },
+            "id": 2,
+            "options": {
+              "footer": {
+                "fields": "",
+                "reducer": [
+                  "sum"
+                ],
+                "show": false
+              },
+              "showHeader": true,
+              "sortBy": []
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "postgres",
+                  "uid": "_uB9FLQ7z"
+                },
+                "format": "table",
+                "group": [],
+                "metricColumn": "none",
+                "rawQuery": true,
+                "rawSql": "SELECT\n  time AS \"time\",\n  numbers, message\nFROM logs\nWHERE\n  information = '10'",
+                "refId": "A",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "numbers"
+                      ],
+                      "type": "column"
+                    }
+                  ]
+                ],
+                "table": "logs",
+                "timeColumn": "time",
+                "timeColumnType": "timestamp",
+                "where": [
+                  {
+                    "name": "$__timeFilter",
+                    "params": [],
+                    "type": "macro"
+                  }
+                ]
+              }
+            ],
+            "title": "Actual data",
+            "transformations": [
+              {
+                "id": "organize",
+                "options": {
+                  "excludeByName": {
+                    "numbers": true
+                  },
+                  "indexByName": {},
+                  "renameByName": {}
+                }
+              }
+            ],
+            "type": "table"
+          },
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "_uB9FLQ7z"
+            },
+            "description": "string_to_array takes from which word to which word you need to trim",
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "align": "auto",
+                  "displayMode": "auto"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "numbers This is used for trimming"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 204
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "time"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 168
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "numbers"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 129
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 15,
+              "x": 9,
+              "y": 1
+            },
+            "id": 3,
+            "options": {
+              "footer": {
+                "fields": "",
+                "reducer": [
+                  "sum"
+                ],
+                "show": false
+              },
+              "showHeader": true,
+              "sortBy": []
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "postgres",
+                  "uid": "_uB9FLQ7z"
+                },
+                "format": "table",
+                "group": [],
+                "metricColumn": "none",
+                "rawQuery": true,
+                "rawSql": "SELECT\n  time AS \"time\",\n  numbers,message, (string_to_array(message, ' '))[1:3] \nFROM logs\nWHERE\n  information = '10'",
+                "refId": "A",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "numbers"
+                      ],
+                      "type": "column"
+                    }
+                  ]
+                ],
+                "table": "logs",
+                "timeColumn": "time",
+                "timeColumnType": "timestamp",
+                "where": [
+                  {
+                    "name": "$__timeFilter",
+                    "params": [],
+                    "type": "macro"
+                  }
+                ]
+              }
+            ],
+            "title": "string to array",
+            "transformations": [
+              {
+                "id": "organize",
+                "options": {
+                  "excludeByName": {
+                    "numbers": true
+                  },
+                  "indexByName": {},
+                  "renameByName": {}
+                }
+              }
+            ],
+            "type": "table"
+          },
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "_uB9FLQ7z"
+            },
+            "description": "substr takes 3 arguments (column, start substring from, how long the substring should be)",
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "align": "auto",
+                  "displayMode": "auto"
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green"
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "numbers This is used for trimming"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 204
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "numbers"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 84
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "time"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 158
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 13,
+              "x": 0,
+              "y": 8
+            },
+            "id": 4,
+            "options": {
+              "footer": {
+                "fields": "",
+                "reducer": [
+                  "sum"
+                ],
+                "show": false
+              },
+              "showHeader": true,
+              "sortBy": []
+            },
+            "pluginVersion": "8.3.3",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "postgres",
+                  "uid": "_uB9FLQ7z"
+                },
+                "format": "table",
+                "group": [],
+                "metricColumn": "none",
+                "rawQuery": true,
+                "rawSql": "SELECT\n  time AS \"time\",\n  numbers, message, SUBSTR(message,3,5)\nFROM logs\nWHERE\n  information = '10'",
+                "refId": "A",
+                "select": [
+                  [
+                    {
+                      "params": [
+                        "numbers"
+                      ],
+                      "type": "column"
+                    }
+                  ]
+                ],
+                "table": "logs",
+                "timeColumn": "time",
+                "timeColumnType": "timestamp",
+                "where": [
+                  {
+                    "name": "$__timeFilter",
+                    "params": [],
+                    "type": "macro"
+                  }
+                ]
+              }
+            ],
+            "title": "using substring",
+            "transformations": [
+              {
+                "id": "organize",
+                "options": {
+                  "excludeByName": {
+                    "numbers": true
+                  },
+                  "indexByName": {},
+                  "renameByName": {}
+                }
+              }
+            ],
+            "type": "table"
+          }
+        ],
+        "title": "syslog",
+        "type": "row"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 34,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "user-level messages",
+            "value": "user-level messages"
+          },
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "Facility",
+          "options": [
+            {
+              "selected": false,
+              "text": "kernel messages",
+              "value": "kernel messages"
+            },
+            {
+              "selected": true,
+              "text": "user-level messages",
+              "value": "user-level messages"
+            },
+            {
+              "selected": false,
+              "text": "mail system",
+              "value": "mail system"
+            },
+            {
+              "selected": false,
+              "text": "system daemons",
+              "value": "system daemons"
+            },
+            {
+              "selected": false,
+              "text": "*security/authorization messages",
+              "value": "*security/authorization messages"
+            },
+            {
+              "selected": false,
+              "text": "messages generated internally by Syslog",
+              "value": "messages generated internally by Syslog"
+            },
+            {
+              "selected": false,
+              "text": "line printer subsystem",
+              "value": "line printer subsystem"
+            },
+            {
+              "selected": false,
+              "text": "network news subsystem",
+              "value": "network news subsystem"
+            },
+            {
+              "selected": false,
+              "text": "UUCP subsystem",
+              "value": "UUCP subsystem"
+            },
+            {
+              "selected": false,
+              "text": "clock daemon",
+              "value": "clock daemon"
+            },
+            {
+              "selected": false,
+              "text": "security/authorization messages",
+              "value": "security/authorization messages"
+            },
+            {
+              "selected": false,
+              "text": "FTP daemon",
+              "value": "FTP daemon"
+            },
+            {
+              "selected": false,
+              "text": "NTP subsystem",
+              "value": "NTP subsystem"
+            },
+            {
+              "selected": false,
+              "text": "log audit",
+              "value": "log audit"
+            },
+            {
+              "selected": false,
+              "text": "log alert",
+              "value": "log alert"
+            },
+            {
+              "selected": false,
+              "text": "clock daemon",
+              "value": "clock daemon"
+            },
+            {
+              "selected": false,
+              "text": "local use 0 (local0)",
+              "value": "local use 0 (local0)"
+            },
+            {
+              "selected": false,
+              "text": "local use 1 (local1)",
+              "value": "local use 1 (local1)"
+            },
+            {
+              "selected": false,
+              "text": "local use 2 (local2)",
+              "value": "local use 2 (local2)"
+            },
+            {
+              "selected": false,
+              "text": "local use 3 (local3)",
+              "value": "local use 3 (local3)"
+            },
+            {
+              "selected": false,
+              "text": "local use 4 (local4)",
+              "value": "local use 4 (local4)"
+            },
+            {
+              "selected": false,
+              "text": "local use 5 (local5)",
+              "value": "local use 5 (local5)"
+            },
+            {
+              "selected": false,
+              "text": "local use 6 (local6)",
+              "value": "local use 6 (local6)"
+            },
+            {
+              "selected": false,
+              "text": "local use 7 (local7)",
+              "value": "local use 7 (local7)"
+            }
+          ],
+          "query": "kernel messages, user-level messages,mail system,system daemons,*security/authorization messages,messages generated internally by Syslog,line printer subsystem, network news subsystem,UUCP subsystem,,clock daemon,security/authorization messages,FTP daemon, NTP subsystem, log audit, log alert, \tclock daemon,local use 0 (local0), local use 1 (local1), local use 2 (local2),local use 3 (local3),local use 4 (local4),local use 5 (local5),\tlocal use 6 (local6),local use 7 (local7)",
+          "queryValue": "",
+          "skipUrlSync": false,
+          "type": "custom"
+        },
+        {
+          "current": {
+            "selected": true,
+            "text": "two",
+            "value": "two"
+          },
+          "datasource": {
+            "type": "postgres",
+            "uid": "_uB9FLQ7z"
+          },
+          "definition": "select facilitynames from logs;",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "facilitynames",
+          "options": [],
+          "query": "select facilitynames from logs;",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "2",
+            "value": "2"
+          },
+          "datasource": {
+            "type": "postgres",
+            "uid": "_uB9FLQ7z"
+          },
+          "definition": "select facilitycodes from logs where facilitynames = '$facilitynames';",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "facilitycodes",
+          "options": [],
+          "query": "select facilitycodes from logs where facilitynames = '$facilitynames';",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {
+            "selected": true,
+            "text": "2",
+            "value": "2"
+          },
+          "datasource": {
+            "type": "postgres",
+            "uid": "_uB9FLQ7z"
+          },
+          "definition": "select case facilitynames when 'one' then 1 when 'two' then 2 end from logs;",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "experimental1",
+          "options": [],
+          "query": "select case facilitynames when 'one' then 1 when 'two' then 2 end from logs;",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "one",
+            "value": "1"
+          },
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "custom",
+          "options": [
+            {
+              "selected": true,
+              "text": "one",
+              "value": "1"
+            },
+            {
+              "selected": false,
+              "text": "two",
+              "value": "2"
+            }
+          ],
+          "query": "one : 1, two : 2",
+          "queryValue": "",
+          "skipUrlSync": false,
+          "type": "custom"
+        },
+        {
+          "current": {
+            "selected": true,
+            "text": "three",
+            "value": "3"
+          },
+          "datasource": {
+            "type": "postgres",
+            "uid": "_uB9FLQ7z"
+          },
+          "definition": "SELECT\n    facilitynames AS __text,\n    facilitycodes AS __value\nFROM logs",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "variableTextValue",
+          "options": [],
+          "query": "SELECT\n    facilitynames AS __text,\n    facilitycodes AS __value\nFROM logs",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "syslog messages trimming",
+    "uid": "19GLCUj7k",
+    "version": 61,
+    "weekStart": ""
+  }
+}

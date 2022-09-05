@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "variables-testing",
+    "url": "/d/8l_sPLmVk/variables-testing",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-08-16T14:36:46+05:30",
+    "updated": "2022-08-16T14:43:47+05:30",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 2,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 194,
+    "folderUid": "mu5yEYi4k",
+    "folderTitle": "VariablesTesting",
+    "folderUrl": "/dashboards/f/mu5yEYi4k/variablestesting",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 195,
+    "links": [],
+    "liveNow": false,
+    "panels": [],
+    "schemaVersion": 34,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "1000",
+            "value": "1000"
+          },
+          "datasource": {
+            "type": "postgres",
+            "uid": "TQ1QPYi4z"
+          },
+          "definition": "select * from testing;",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "name",
+          "options": [],
+          "query": "select * from testing;",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Variables Testing",
+    "uid": "8l_sPLmVk",
+    "version": 2,
+    "weekStart": ""
+  }
+}

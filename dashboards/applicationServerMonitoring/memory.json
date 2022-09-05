@@ -1,0 +1,1054 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "memory",
+    "url": "/d/meprJZEnk/memory",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-03-22T11:24:55+05:30",
+    "updated": "2022-04-12T11:51:23+05:30",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 23,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 7,
+    "folderUid": "HIeIulE7k",
+    "folderTitle": "applicationServerMonitoring",
+    "folderUrl": "/dashboards/f/HIeIulE7k/applicationservermonitoring",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 10,
+    "iteration": 1649744473945,
+    "links": [
+      {
+        "asDropdown": false,
+        "icon": "external link",
+        "includeVars": true,
+        "keepTime": true,
+        "tags": [
+          "CPU"
+        ],
+        "targetBlank": false,
+        "title": "CPU",
+        "tooltip": "",
+        "type": "dashboards",
+        "url": ""
+      },
+      {
+        "asDropdown": false,
+        "icon": "external link",
+        "includeVars": true,
+        "keepTime": true,
+        "tags": [
+          "Memory"
+        ],
+        "targetBlank": false,
+        "title": "Memory",
+        "tooltip": "",
+        "type": "dashboards",
+        "url": ""
+      },
+      {
+        "asDropdown": false,
+        "icon": "external link",
+        "includeVars": true,
+        "keepTime": true,
+        "tags": [
+          "Disk"
+        ],
+        "targetBlank": false,
+        "title": "Disk",
+        "tooltip": "",
+        "type": "dashboards",
+        "url": ""
+      },
+      {
+        "asDropdown": false,
+        "icon": "external link",
+        "includeVars": true,
+        "keepTime": true,
+        "tags": [
+          "IO"
+        ],
+        "targetBlank": false,
+        "title": "IO",
+        "tooltip": "",
+        "type": "dashboards",
+        "url": ""
+      },
+      {
+        "asDropdown": false,
+        "icon": "dashboard",
+        "includeVars": false,
+        "keepTime": false,
+        "tags": [],
+        "targetBlank": false,
+        "title": "Home",
+        "tooltip": "",
+        "type": "link",
+        "url": "http://localhost:3000/d/NwUk06Ynz1/grafana-dashboard?orgId=1"
+      }
+    ],
+    "liveNow": false,
+    "panels": [
+      {
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "percentage",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "orange",
+                  "value": 70
+                },
+                {
+                  "color": "red",
+                  "value": 85
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 0,
+          "y": 0
+        },
+        "id": 4,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_MemAvailable_bytes{instance=\"$Server\", job=\"$job\"}\n / node_memory_MemTotal_bytes{instance=\"$Server\", job=\"$job\"} * 100",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Memory Available",
+        "type": "gauge"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "percentage",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "orange",
+                  "value": 70
+                },
+                {
+                  "color": "red",
+                  "value": 85
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 3,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "100 - \n(node_memory_MemAvailable_bytes{instance=\"$Server\", job=\"$job\"} / node_memory_MemTotal_bytes{instance=\"$Server\", job=\"$job\"} * 100)",
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Memory Usage",
+        "type": "gauge"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "percentage",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "orange",
+                  "value": 70
+                },
+                {
+                  "color": "red",
+                  "value": 85
+                }
+              ]
+            },
+            "unit": "bytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 6,
+          "y": 0
+        },
+        "id": 7,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_MemTotal_bytes{instance=\"$Server\", job=\"$job\"}",
+            "interval": "",
+            "legendFormat": "RAM TOTAL",
+            "refId": "A"
+          }
+        ],
+        "title": "Total Ram",
+        "type": "gauge"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "percentage",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "orange",
+                  "value": 70
+                },
+                {
+                  "color": "red",
+                  "value": 85
+                }
+              ]
+            },
+            "unit": "bytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 9,
+          "y": 0
+        },
+        "id": 8,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_MemTotal_bytes{instance=\"$Server\", job=\"$job\"} - \nnode_memory_MemFree_bytes{instance=\"$Server\", job=\"$job\"} - \n(node_memory_Cached_bytes{instance=\"$Server\", job=\"$job\"} + node_memory_Buffers_bytes{instance=\"$Server\", job=\"$job\"})",
+            "interval": "",
+            "legendFormat": "RAM Used",
+            "refId": "A"
+          }
+        ],
+        "title": "RAM Used",
+        "type": "gauge"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "percentage",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "orange",
+                  "value": 70
+                },
+                {
+                  "color": "red",
+                  "value": 85
+                }
+              ]
+            },
+            "unit": "bytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 4,
+          "x": 12,
+          "y": 0
+        },
+        "id": 9,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_Cached_bytes{instance=\"$Server\", job=\"$job\"} + \nnode_memory_Buffers_bytes{instance=\"$Server\", job=\"$job\"}",
+            "interval": "",
+            "legendFormat": "RAM cache+Buffer",
+            "refId": "A"
+          }
+        ],
+        "title": "RAM cache+Buffer",
+        "type": "gauge"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "percentage",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "orange",
+                  "value": 70
+                },
+                {
+                  "color": "red",
+                  "value": 85
+                }
+              ]
+            },
+            "unit": "bytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 4,
+          "x": 16,
+          "y": 0
+        },
+        "id": 10,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_MemFree_bytes{instance=\"$Server\", job=\"$job\"}",
+            "interval": "",
+            "legendFormat": "RAM Free",
+            "refId": "A"
+          }
+        ],
+        "title": "RAM Free",
+        "type": "gauge"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "percentage",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "orange",
+                  "value": 70
+                },
+                {
+                  "color": "red",
+                  "value": 85
+                }
+              ]
+            },
+            "unit": "bytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 4,
+          "x": 20,
+          "y": 0
+        },
+        "id": 11,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_SwapTotal_bytes{job=\"$job\", instance=\"$Server\"}-\nnode_memory_SwapFree_bytes{job=\"$job\", instance=\"$Server\"}",
+            "interval": "",
+            "legendFormat": "SWAP used",
+            "refId": "A"
+          }
+        ],
+        "title": "SWAP used",
+        "type": "gauge"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": [],
+            "unit": "bytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 7,
+          "x": 0,
+          "y": 4
+        },
+        "id": 13,
+        "options": {
+          "displayLabels": [
+            "percent"
+          ],
+          "legend": {
+            "displayMode": "list",
+            "placement": "right",
+            "values": []
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "tooltip": {
+            "mode": "single"
+          }
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_MemTotal_bytes{instance=\"$Server\", job=\"$job\"}",
+            "interval": "",
+            "legendFormat": "RAM Total",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_MemTotal_bytes{instance=\"$Server\", job=\"$job\"} - \nnode_memory_MemFree_bytes{instance=\"$Server\", job=\"$job\"} - \n(node_memory_Cached_bytes{instance=\"$Server\", job=\"$job\"} + node_memory_Buffers_bytes{instance=\"$Server\", job=\"$job\"})",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "RAM Used",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_Cached_bytes{instance=\"$Server\", job=\"$job\"} + \nnode_memory_Buffers_bytes{instance=\"$Server\", job=\"$job\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "RAM cache+Buffer",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_MemFree_bytes{instance=\"$Server\", job=\"$job\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "RAM Free",
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "(node_memory_SwapTotal_bytes{instance=\"$instance\", job=\"$job\"}-\nnode_memory_SwapFree_bytes{instance=\"$instance\", job=\"$job\"})",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "SWAP used",
+            "refId": "E"
+          }
+        ],
+        "title": "Memory Stat",
+        "type": "piechart"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 25,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "percentage",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "orange",
+                  "value": 70
+                },
+                {
+                  "color": "red",
+                  "value": 85
+                }
+              ]
+            },
+            "unit": "bytes"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "RAM Total"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-orange",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "RAM Used"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-blue",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "RAM cache+Buffer"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-red",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "RAM Free"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-purple",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 17,
+          "x": 7,
+          "y": 4
+        },
+        "id": 6,
+        "options": {
+          "legend": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "displayMode": "table",
+            "placement": "right"
+          },
+          "tooltip": {
+            "mode": "multi"
+          }
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_MemTotal_bytes{instance=\"$Server\", job=\"$job\"}",
+            "interval": "",
+            "legendFormat": "RAM Total",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_MemTotal_bytes{instance=\"$Server\", job=\"$job\"} - \nnode_memory_MemFree_bytes{instance=\"$Server\", job=\"$job\"} - \n(node_memory_Cached_bytes{instance=\"$Server\", job=\"$job\"} + node_memory_Buffers_bytes{instance=\"$Server\", job=\"$job\"})",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "RAM Used",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_Cached_bytes{instance=\"$Server\", job=\"$job\"} + \nnode_memory_Buffers_bytes{instance=\"$Server\", job=\"$job\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "RAM cache+Buffer",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_MemFree_bytes{instance=\"$Server\", job=\"$job\"}",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "RAM Free",
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "(node_memory_SwapTotal_bytes{instance=\"$instance\", job=\"$job\"}-\nnode_memory_SwapFree_bytes{instance=\"$instance\", job=\"$job\"})",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "SWAP used",
+            "refId": "E"
+          }
+        ],
+        "title": "Memory Stat",
+        "type": "timeseries"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 33,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "line"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "percentage",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "orange",
+                  "value": 70
+                },
+                {
+                  "color": "red",
+                  "value": 85
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Memory Available"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-blue",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 24,
+          "x": 0,
+          "y": 9
+        },
+        "id": 12,
+        "options": {
+          "legend": {
+            "calcs": [
+              "lastNotNull",
+              "mean",
+              "max"
+            ],
+            "displayMode": "table",
+            "placement": "right"
+          },
+          "tooltip": {
+            "mode": "multi"
+          }
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "node_memory_MemAvailable_bytes{instance=\"$Server\", job=\"$job\"}\n / node_memory_MemTotal_bytes{instance=\"$Server\", job=\"$job\"} * 100",
+            "interval": "",
+            "legendFormat": "Memory Available",
+            "refId": "A"
+          }
+        ],
+        "title": "Memory Available",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 34,
+    "style": "dark",
+    "tags": [
+      "server"
+    ],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "DevServer:9100",
+            "value": "DevServer:9100"
+          },
+          "definition": "label_values(node_uname_info, instance)",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "Server",
+          "options": [],
+          "query": {
+            "query": "label_values(node_uname_info, instance)",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "node",
+            "value": "node"
+          },
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "job",
+          "options": [
+            {
+              "selected": true,
+              "text": "node",
+              "value": "node"
+            },
+            {
+              "selected": false,
+              "text": "node1",
+              "value": "node1"
+            },
+            {
+              "selected": false,
+              "text": "node2",
+              "value": "node2"
+            },
+            {
+              "selected": false,
+              "text": "node3",
+              "value": "node3"
+            }
+          ],
+          "query": "node, node1, node2, node3",
+          "skipUrlSync": false,
+          "type": "custom"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Memory",
+    "uid": "meprJZEnk",
+    "version": 23,
+    "weekStart": ""
+  }
+}

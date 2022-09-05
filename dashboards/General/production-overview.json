@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "production-overview",
+    "url": "/d/DVZiscWVk/production-overview",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-08-25T13:04:54+05:30",
+    "updated": "2022-08-25T13:04:54+05:30",
+    "updatedBy": "Anonymous",
+    "createdBy": "Anonymous",
+    "version": 1,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 0,
+    "folderUid": "",
+    "folderTitle": "General",
+    "folderUrl": "",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "id": 197,
+    "rows": [
+      {}
+    ],
+    "schemaVersion": 6,
+    "tags": [
+      "templated"
+    ],
+    "timezone": "browser",
+    "title": "Production Overview",
+    "uid": "DVZiscWVk",
+    "version": 1
+  }
+}

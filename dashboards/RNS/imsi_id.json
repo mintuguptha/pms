@@ -1,0 +1,1328 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "imsi_id",
+    "url": "/d/tLOK-eq7k/imsi_id",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-07-01T17:47:08+05:30",
+    "updated": "2022-07-21T12:21:09+05:30",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 115,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 154,
+    "folderUid": "sfM3F637z",
+    "folderTitle": "RNS",
+    "folderUrl": "/dashboards/f/sfM3F637z/rns",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 159,
+    "iteration": 1658386189347,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "postgres",
+          "uid": "_uB9FLQ7z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "center",
+              "displayMode": "auto",
+              "filterable": true
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "regepcoh"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "deregepoch"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "IMSI_ID"
+              },
+              "properties": [
+                {
+                  "id": "custom.hidden",
+                  "value": true
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 3,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "maxDataPoints": 100,
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": []
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "_uB9FLQ7z"
+            },
+            "format": "table",
+            "group": [],
+            "metricColumn": "none",
+            "rawQuery": true,
+            "rawSql": "SELECT\n  f.reg_time AS \"time\",\n  f.s_bcnid,\n  fc.ueid,\n  (select extract(epoch from f1.reg_time) from f_ue_registration f1 \n  where f1.s_bcnid=f.s_bcnid) * 1000 as regepcoh,\n  (select extract(epoch from fd1.evt_time) from f_ue_deregistration fd1\n  where fd1.s_bcnid=f.s_bcnid) * 1000 as deregepoch\nFROM f_ue_registration f, f_ue_common_id fc,f_ue_deregistration fd\nWHERE\n  $__timeFilter(f.reg_time)\n  and f.s_bcnid=fc.s_bcnid\n  and f.s_bcnid=fd.s_bcnid\nORDER BY 1",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "evt_time"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "reg_time"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "s_bcnid"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "ueid"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "f_ue_common_id",
+            "timeColumn": "reg_time",
+            "timeColumnType": "timestamptz",
+            "where": [
+              {
+                "name": "$__timeFilter",
+                "params": [],
+                "type": "macro"
+              }
+            ]
+          }
+        ],
+        "title": " ",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "time": true
+              },
+              "indexByName": {},
+              "renameByName": {
+                "evt_time": "EVENT_Time",
+                "reg_time": "REG_Time",
+                "s_bcnid": "S_BCN_ID",
+                "time": "",
+                "ueid": "IMSI_ID"
+              }
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "postgres",
+          "uid": "_uB9FLQ7z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "center",
+              "displayMode": "auto",
+              "filterable": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "s_bcnid"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 82
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-blue",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "evt_time"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 187
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-orange",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "REG_Time"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 276
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-purple",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "S_BCN_ID"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 249
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-green",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "EVENT_Time"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 342
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-orange",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "IMSI_ID"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#7d222c",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 21,
+          "x": 3,
+          "y": 0
+        },
+        "id": 4,
+        "maxDataPoints": 100,
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": []
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "_uB9FLQ7z"
+            },
+            "format": "table",
+            "group": [],
+            "metricColumn": "none",
+            "rawQuery": true,
+            "rawSql": "SELECT\n  reg_time AS \"time\",\n  f_ue_common_id.s_bcnid\nFROM f_ue_common_id\nWHERE \n  $__timeFilter(reg_time) AND ueid in (${imsi:singlequote})\nORDER BY 1",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "evt_time"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "reg_time"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "s_bcnid"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "ueid"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "f_ue_common_id",
+            "timeColumn": "reg_time",
+            "timeColumnType": "timestamptz",
+            "where": [
+              {
+                "name": "$__timeFilter",
+                "params": [],
+                "type": "macro"
+              }
+            ]
+          }
+        ],
+        "title": " ",
+        "transformations": [
+          {
+            "id": "reduce",
+            "options": {
+              "reducers": [
+                "allValues"
+              ]
+            }
+          },
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "auto",
+              "replace": false,
+              "source": "All values"
+            }
+          },
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "All values": true
+              },
+              "indexByName": {},
+              "renameByName": {}
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "postgres",
+          "uid": "_uB9FLQ7z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "center",
+              "displayMode": "auto",
+              "filterable": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "s_bcnid"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 82
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-blue",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "evt_time"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 187
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-orange",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "REG_Time"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 276
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-purple",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "S_BCN_ID"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 249
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-green",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "EVENT_Time"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 342
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-orange",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "IMSI_ID"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#7d222c",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 24,
+          "x": 0,
+          "y": 3
+        },
+        "id": 5,
+        "maxDataPoints": 100,
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": false,
+          "sortBy": []
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "_uB9FLQ7z"
+            },
+            "format": "table",
+            "group": [],
+            "metricColumn": "none",
+            "rawQuery": true,
+            "rawSql": "SELECT\n  reg_time AS \"time\",\n  f_ue_common_id.s_bcnid\nFROM f_ue_common_id\nWHERE \n  $__timeFilter(reg_time) AND ueid in (${imsi:singlequote})\nORDER BY 1",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "evt_time"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "reg_time"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "s_bcnid"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "ueid"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "f_ue_common_id",
+            "timeColumn": "reg_time",
+            "timeColumnType": "timestamptz",
+            "where": [
+              {
+                "name": "$__timeFilter",
+                "params": [],
+                "type": "macro"
+              }
+            ]
+          }
+        ],
+        "title": " s_bcnid",
+        "transformations": [
+          {
+            "id": "reduce",
+            "options": {
+              "reducers": [
+                "allValues"
+              ]
+            }
+          },
+          {
+            "id": "extractFields",
+            "options": {
+              "format": "auto",
+              "replace": true,
+              "source": "All values"
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "postgres",
+          "uid": "_uB9FLQ7z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "s_bcnid"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-blue",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "evt_time"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-orange",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "REG_Time"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-purple",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "S_BCN_ID"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-green",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "EVENT_Time"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-orange",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "IMSI_ID"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#7d222c",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 24,
+          "x": 0,
+          "y": 6
+        },
+        "id": 3,
+        "maxDataPoints": 100,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom"
+          },
+          "tooltip": {
+            "mode": "single"
+          }
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "_uB9FLQ7z"
+            },
+            "format": "table",
+            "group": [],
+            "metricColumn": "none",
+            "rawQuery": true,
+            "rawSql": "SELECT\n  reg_time AS \"time\",\n  f_ue_common_id.*\nFROM f_ue_common_id\nWHERE \n  $__timeFilter(reg_time) AND ueid in (${imsi:singlequote})\nORDER BY 1",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "evt_time"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "reg_time"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "s_bcnid"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "ueid"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "f_ue_common_id",
+            "timeColumn": "reg_time",
+            "timeColumnType": "timestamptz",
+            "where": [
+              {
+                "name": "$__timeFilter",
+                "params": [],
+                "type": "macro"
+              }
+            ]
+          }
+        ],
+        "title": "IMSI_ID Details",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "time": true
+              },
+              "indexByName": {},
+              "renameByName": {
+                "evt_time": "EVENT_Time",
+                "reg_time": "REG_Time",
+                "s_bcnid": "S_BCN_ID",
+                "time": "",
+                "ueid": "IMSI_ID"
+              }
+            }
+          }
+        ],
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "postgres",
+          "uid": "_uB9FLQ7z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "center",
+              "displayMode": "auto"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "s_bcnid"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 82
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-blue",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "evt_time"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 187
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-orange",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "REG_Time"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 276
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-purple",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "S_BCN_ID"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 249
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-green",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "EVENT_Time"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 342
+                },
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "dark-orange",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "IMSI_ID"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#7d222c",
+                    "mode": "fixed"
+                  }
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 24,
+          "x": 0,
+          "y": 11
+        },
+        "id": 6,
+        "maxDataPoints": 100,
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": []
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "postgres",
+              "uid": "_uB9FLQ7z"
+            },
+            "format": "table",
+            "group": [],
+            "metricColumn": "none",
+            "rawQuery": true,
+            "rawSql": "SELECT\n  reg_time AS \"time\",\n  f_ue_common_id.*\nFROM f_ue_common_id\nWHERE \n  $__timeFilter(reg_time) AND ueid in (${imsi:singlequote})\nORDER BY 1",
+            "refId": "A",
+            "select": [
+              [
+                {
+                  "params": [
+                    "evt_time"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "reg_time"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "s_bcnid"
+                  ],
+                  "type": "column"
+                }
+              ],
+              [
+                {
+                  "params": [
+                    "ueid"
+                  ],
+                  "type": "column"
+                }
+              ]
+            ],
+            "table": "f_ue_common_id",
+            "timeColumn": "reg_time",
+            "timeColumnType": "timestamptz",
+            "where": [
+              {
+                "name": "$__timeFilter",
+                "params": [],
+                "type": "macro"
+              }
+            ]
+          }
+        ],
+        "title": "IMSI_ID Details",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "time": true
+              },
+              "indexByName": {},
+              "renameByName": {
+                "evt_time": "EVENT_Time",
+                "reg_time": "REG_Time",
+                "s_bcnid": "S_BCN_ID",
+                "time": "",
+                "ueid": "IMSI_ID"
+              }
+            }
+          }
+        ],
+        "type": "table"
+      }
+    ],
+    "refresh": false,
+    "schemaVersion": 34,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "111222333444555",
+            "value": "111222333444555"
+          },
+          "datasource": {
+            "type": "postgres",
+            "uid": "_uB9FLQ7z"
+          },
+          "definition": "select ueid from f_ue_common_id;",
+          "hide": 2,
+          "includeAll": true,
+          "multi": false,
+          "name": "imsi",
+          "options": [],
+          "query": "select ueid from f_ue_common_id;",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "2000",
+            "value": "2000"
+          },
+          "datasource": {
+            "type": "postgres",
+            "uid": "_uB9FLQ7z"
+          },
+          "definition": "select s_bcnid from f_ue_registration;",
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "sbcnid",
+          "options": [],
+          "query": "select s_bcnid from f_ue_registration;",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-30d",
+      "to": "now"
+    },
+    "timepicker": {
+      "hidden": false
+    },
+    "timezone": "",
+    "title": "IMSI_ID",
+    "uid": "tLOK-eq7k",
+    "version": 115,
+    "weekStart": ""
+  }
+}

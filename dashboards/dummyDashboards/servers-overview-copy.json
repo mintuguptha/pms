@@ -1,0 +1,462 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "servers-overview-copy",
+    "url": "/d/rMcGGg9nk/servers-overview-copy",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-05-25T15:53:20+05:30",
+    "updated": "2022-05-25T17:55:31+05:30",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 26,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 126,
+    "folderUid": "Ph-aWg9nk",
+    "folderTitle": "dummyDashboards",
+    "folderUrl": "/dashboards/f/Ph-aWg9nk/dummydashboards",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 129,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "center",
+              "displayMode": "auto"
+            },
+            "decimals": 2,
+            "displayName": "",
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "nodename"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Hostname"
+                },
+                {
+                  "id": "unit",
+                  "value": "bytes"
+                },
+                {
+                  "id": "decimals",
+                  "value": 1
+                },
+                {
+                  "id": "custom.align",
+                  "value": "left"
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "purple",
+                        "value": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "links",
+                  "value": [
+                    {
+                      "targetBlank": true,
+                      "title": "",
+                      "url": "/d/OObuZgr7k/cpu?orgId=1&var-hostname=${__data.fields.nodename}&var-second=${__data.fields.instance}&var-nodename=virtual1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Value #H"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Disk read"
+                },
+                {
+                  "id": "unit",
+                  "value": "Bps"
+                },
+                {
+                  "id": "decimals",
+                  "value": 2
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background"
+                },
+                {
+                  "id": "custom.align",
+                  "value": "center"
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "rgba(50, 172, 45, 0.97)",
+                        "value": null
+                      },
+                      {
+                        "color": "rgba(237, 129, 40, 0.89)",
+                        "value": 10485760
+                      },
+                      {
+                        "color": "rgba(245, 54, 54, 0.9)",
+                        "value": 20485760
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "links",
+                  "value": [
+                    {
+                      "targetBlank": true,
+                      "title": "Disk Read",
+                      "url": "/d/JwZ9eWP7k/io?&var-Server=${__data.fields.instance}"
+                    }
+                  ]
+                },
+                {
+                  "id": "custom.width",
+                  "value": 100
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Value #K"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Upload"
+                },
+                {
+                  "id": "unit",
+                  "value": "bps"
+                },
+                {
+                  "id": "decimals",
+                  "value": 2
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background"
+                },
+                {
+                  "id": "custom.align",
+                  "value": "center"
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "rgba(50, 172, 45, 0.97)",
+                        "value": null
+                      },
+                      {
+                        "color": "rgba(237, 129, 40, 0.89)",
+                        "value": 30485760
+                      },
+                      {
+                        "color": "rgba(245, 54, 54, 0.9)",
+                        "value": 104857600
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "custom.width",
+                  "value": 100
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Value #L"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "5m load"
+                },
+                {
+                  "id": "unit",
+                  "value": "short"
+                },
+                {
+                  "id": "decimals",
+                  "value": 2
+                },
+                {
+                  "id": "custom.align",
+                  "value": "center"
+                },
+                {
+                  "id": "custom.width",
+                  "value": 70
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Value #O"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Disk Used%"
+                },
+                {
+                  "id": "unit",
+                  "value": "percent"
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                },
+                {
+                  "id": "custom.align",
+                  "value": "center"
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "dark-green",
+                        "value": null
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "links",
+                  "value": [
+                    {
+                      "targetBlank": true,
+                      "title": "",
+                      "url": "/d/UFUX6ZE7z/disk?var-Server=${__data.fields.instance}"
+                    }
+                  ]
+                },
+                {
+                  "id": "custom.width",
+                  "value": 120
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": " Uptime"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 90
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 7,
+          "x": 0,
+          "y": 0
+        },
+        "id": 6,
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": []
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "node_uname_info",
+            "format": "table",
+            "instant": true,
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "title": "Server Resource Overview",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "Time": true,
+                "Value": true,
+                "Value #A": true,
+                "Value #B": false,
+                "Value #C": false,
+                "Value #D": false,
+                "Value #F": false,
+                "Value #G": false,
+                "Value #H": false,
+                "Value #I": false,
+                "Value #J": false,
+                "Value #L": false,
+                "Value #M": true,
+                "Value #N": true,
+                "__name__": true,
+                "device": true,
+                "domainname": true,
+                "fstype": true,
+                "instance": false,
+                "job": true,
+                "machine": true,
+                "mountpoint": true,
+                "release": true,
+                "sysname": true,
+                "version": true
+              },
+              "indexByName": {
+                "Time": 0,
+                "Value #A": 9,
+                "Value #B": 11,
+                "Value #C": 12,
+                "Value #D": 10,
+                "Value #F": 15,
+                "Value #G": 16,
+                "Value #H": 17,
+                "Value #I": 18,
+                "Value #J": 21,
+                "Value #K": 22,
+                "Value #L": 14,
+                "Value #M": 19,
+                "Value #N": 20,
+                "Value #O": 26,
+                "__name__": 13,
+                "device": 23,
+                "domainname": 2,
+                "fstype": 24,
+                "instance": 3,
+                "job": 4,
+                "machine": 5,
+                "mountpoint": 25,
+                "nodename": 1,
+                "release": 6,
+                "sysname": 7,
+                "version": 8
+              },
+              "renameByName": {}
+            }
+          }
+        ],
+        "type": "table"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 34,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-15m",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Servers Overview Copy",
+    "uid": "rMcGGg9nk",
+    "version": 26,
+    "weekStart": ""
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "homedashboard",
+    "url": "/d/-ysGOmUnz/homedashboard",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-04-06T19:43:44+05:30",
+    "updated": "2022-08-05T12:46:30+05:30",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 30,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 79,
+    "folderUid": "EDhlFiU7k",
+    "folderTitle": "UpdatedDashboards",
+    "folderUrl": "/dashboards/f/EDhlFiU7k/updateddashboards",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 80,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": null,
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "fixedColor": "#25b58b",
+              "mode": "fixed"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 1,
+          "w": 7,
+          "x": 17,
+          "y": 0
+        },
+        "id": 6,
+        "interval": "1s",
+        "libraryPanel": {
+          "description": "",
+          "meta": {
+            "connectedDashboards": 9,
+            "created": "2022-05-24T17:44:38+05:30",
+            "createdBy": {
+              "avatarUrl": "/avatar/46d229b033af06a191ff2267bca9ae56",
+              "id": 1,
+              "name": "admin"
+            },
+            "folderName": "UpdatedDashboards",
+            "folderUid": "EDhlFiU7k",
+            "updated": "2022-06-08T10:56:28+05:30",
+            "updatedBy": {
+              "avatarUrl": "/avatar/46d229b033af06a191ff2267bca9ae56",
+              "id": 1,
+              "name": "admin"
+            }
+          },
+          "name": "updatedTime",
+          "type": "stat",
+          "uid": "kR2Z8jXnz",
+          "version": 5
+        },
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [],
+            "fields": "/^Time$/",
+            "values": false
+          },
+          "text": {
+            "valueSize": 22
+          },
+          "textMode": "value"
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "time()",
+            "format": "time_series",
+            "instant": true,
+            "interval": "",
+            "intervalFactor": 1,
+            "legendFormat": "",
+            "refId": "A"
+          }
+        ],
+        "transparent": true,
+        "type": "stat"
+      },
+      {
+        "gridPos": {
+          "h": 15,
+          "w": 24,
+          "x": 0,
+          "y": 1
+        },
+        "id": 2,
+        "options": {
+          "content": "<!DOCTYPE html>\n<html>\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<style>\nul, #myUL {\n  list-style-type: none;\n}\n\n#myUL {\n  margin: 0;\n  padding: 0;\n}\n\n\n.active {\n  display: block;\n}\n</style>\n</head>\n<body>\n\n<ul id=\"myUL\">\n      <li><span class=\"box\" >Network Management</span>          <!--virtual machine box-->\n             <ul class=\"nested\">\n                  <li><a href=\"/d/8gsyUgy7z1/cobhammaindashboard-icon-section-2_2?orgId=1\"><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />PMS-Performance Monitoring System</a></li>\n\t\t  <li><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />FMS-Performance Monitoring System</a><li>\n                  <li><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />RNS-Radio Network Station</a></li>\n                  <li><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />PTT-Push To Talk</a></li>\n                  <li><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />GRM-Global Resource Manager</a></li>           \n              </ul>\n           <li>\n      <li><span class=\"box\" >Server Management</span>\n             <ul class=\"nested\">\n                  <li><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />Blade1 oneview</a></li>\n\t\t  <li><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />Server2 ilo</a><li>\n                  <li><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />Server3 ilo</a></li>\n             </ul>\n           <li>\n      <li><span class=\"box\" >Services</span>\n             <ul class=\"nested\">\n                  <li><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />PostgreSQL UI</a></li>\n\t\t  <li><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />Kubernetes UI</a><li>\n                  <li><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />Prometheus UI</a></li>\n             </ul>\n           <li>\n      <li><span class=\"box\" >RF Management</span>\n             <ul class=\"nested\">\n                  <li><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />RF Amplifier1</a></li>\n             </ul>\n           <li>\n      <li><span class=\"box\" >Remote Power Strips</span>\n             <ul class=\"nested\">\n                <li><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />Power Supply Rack1</a></li>\n             </ul>\n           <li>\n       \n</body>\n</html>\n",
+          "mode": "html"
+        },
+        "pluginVersion": "8.3.3",
+        "title": "Management UI",
+        "type": "text"
+      },
+      {
+        "gridPos": {
+          "h": 3,
+          "w": 5,
+          "x": 0,
+          "y": 16
+        },
+        "id": 4,
+        "links": [],
+        "options": {
+          "content": "<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js'></script>\n<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.0.2/jszip-utils.min.js'></script>\n<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js'></script>\n\n<script type='text/javascript'>\nfunction resetMessage () {\n    $(\"#result\")\n    .removeClass()\n    .text(\"\");\n    $(\"#apiresult2\")\n    .removeClass()\n    .text(\"\");\n}\nfunction showMessage(text, id) {\n    resetMessage();\n    $(id)\n    .addClass(\"alert alert-success\")\n    .text(text);\n}\nfunction showError(text, id) {\n    resetMessage();\n    $(id)\n    .addClass(\"alert alert-danger\")\n    .text(text);\n}\nfunction updatePercent(percent) {\n    $(\"#progress_bar\").removeClass(\"hide\")\n    .find(\".progress-bar\")\n    .attr(\"aria-valuenow\", percent)\n    .css({\n        width : percent + \"%\"\n    });\n}\n\nfunction urlToPromise(url) {\n    return new Promise(function(resolve, reject) {\n        JSZipUtils.getBinaryContent(url, function (err, data) {\n            if(err) {\n                reject(err);\n            } else {\n                resolve(data);\n            }\n        });\n    });\n}\n\nvar $form = $(\"#download_form\").on(\"submit\", function () {\n\n    resetMessage();\n    showMessage(\"Starting export ...\", \"#result\");\n    if(!JSZip.support.blob) {\n      showError(\"Sorry, this Grafana dashboard works only with a recent browser !\");\n      return;\n    }\n    var Promise = window.Promise;\n    if (!Promise) {\n      Promise = JSZip.external.Promise;\n    }\n\n    var zip = new JSZip();\n\n    // get all dashboards\n    $.ajax({\n        type: 'GET',\n        url: '/api/search',\n        data: 'query=&type=dash-db',\n        dataType: 'json',\n        async: false,\n        success: function (data) {\n            $.each(data, function(index, el) {\n              if ('folderTitle' in el) {\n                zipname = el.folderTitle.replace(/[:/]{1}/g,\"-\") + '/' + el.title.replace(/[:/]{1}/g,\"-\") + '.json';\n              } else {\n                zipname = el.title.replace(/[:/]{1}/g,\"-\") + '.json';\n              }\n              zip.file(zipname, urlToPromise(\"/api/dashboards/uid/\" + el.uid), {binary:true});\n            });\n        }\n    });\n\n    // when everything has been downloaded, we can trigger the dl\n    zip.generateAsync({type:\"blob\"}, function updateCallback(metadata) {\n        var msg = \"Exporting: \" + metadata.percent.toFixed(2) + \" %\";\n        if(metadata.currentFile) {\n            msg += \", processing dashboard: \" + metadata.currentFile;\n        }\n        showMessage(msg, \"#result\");\n        updatePercent(metadata.percent|0);\n    })\n    .then(function callback(blob) {\n        filename = \"grafana-dashboards-\" + new Date().getTime() + \".zip\";\n        saveAs(blob, filename);\n        showMessage(\"Done!\", \"#result\");\n    }, function (e) {\n        showError(e);\n    });\n\n    return false;\n});\n</script>\n\n<form action=\"#\" id=\"download_form\">\n    <button type=\"submit\" class=\"btn btn-primary\"><i class=\"fa fa-save\"></i> Download all dashboards</button>\n    <br/><br/>\n</form>\n\n<div class=\"progress hide\" id=\"progress_bar\">\n    <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 0%;\">\n    </div>\n</div>\n\n<p class=\"hide\" id=\"result\"></p>",
+          "mode": "html"
+        },
+        "pluginVersion": "8.3.3",
+        "transparent": true,
+        "type": "text"
+      }
+    ],
+    "refresh": false,
+    "schemaVersion": 34,
+    "style": "dark",
+    "tags": [
+      "ServerMonitoring"
+    ],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "HomeDashboard",
+    "uid": "-ysGOmUnz",
+    "version": 30,
+    "weekStart": ""
+  }
+}

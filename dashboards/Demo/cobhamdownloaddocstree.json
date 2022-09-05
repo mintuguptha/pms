@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "cobhamdownloaddocstree",
+    "url": "/d/SohMt8E7z/cobhamdownloaddocstree",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-03-22T11:09:55+05:30",
+    "updated": "2022-03-25T11:39:52+05:30",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 29,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 40,
+    "folderUid": "BsLfbis7z",
+    "folderTitle": "Demo",
+    "folderUrl": "/dashboards/f/BsLfbis7z/demo",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 3,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "gridPos": {
+          "h": 7,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 6,
+        "options": {
+          "content": "<!DOCTYPE html>\n<html>\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<style>\nul, #myUL {\n  list-style-type: none;\n}\n\n#myUL {\n  margin: 0;\n  padding: 0;\n}\n\n.box {\n  cursor: pointer;\n  -webkit-user-select: none; /* Safari 3.1+ */\n  -moz-user-select: none; /* Firefox 2+ */\n  -ms-user-select: none; /* IE 10+ */\n  user-select: none;\n}\n\n.box::before {\n  content: \"\\2610\";\n  color: white;\n  display: inline-block;\n  margin-right: 6px;\n}\n\n.check-box::before {\n  content: \"\\2611\"; \n  color: dodgerblue;\n}\n\n.nested {\n  display: none;\n}\n\n.active {\n  display: block;\n}\n</style>\n</head>\n<body>\n\n<ul id=\"myUL\">\n                          \n      <li><span class=\"box\"><img src=\"/public/img/cobhamSatcom/folder.png\" width=\"20\"/>Documents Folder</span>\n        <ul class=\"nested\">                                  <!--dropdown-->\n          <li><span class=\"box\"><img src=\"/public/img/cobhamSatcom/folder.png\" width=\"20\"/>Documents</span>\n             <ul class=\"nested\">\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 1</a> \n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 2</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 3</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 4</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 5</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 6</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 7</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 8</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 9</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 10</a>\n              </ul>\n           <li>\n           <li><span class=\"box\"><img src=\"/public/img/cobhamSatcom/folder.png\" width=\"20\"/>Documents</span>\n             <ul class=\"nested\">\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 1</a> \n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 2</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 3</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 4</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 5</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 6</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 7</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 8</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 9</a>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 10</a>\n             </ul>\n            <li>\n         </ul>\n      </li>\n</ul>\n\n\n\n<script>\nvar toggler = document.getElementsByClassName(\"box\");\nvar i;\n\nfor (i = 0; i < toggler.length; i++) {\n  toggler[i].addEventListener(\"click\", function() {\n    this.parentElement.querySelector(\".nested\").classList.toggle(\"active\");\n    this.classList.toggle(\"check-box\");\n  });\n}\n</script>\n\n</body>\n</html>\n",
+          "mode": "html"
+        },
+        "pluginVersion": "8.3.3",
+        "title": "Download Links with images (horizontal)",
+        "type": "text"
+      },
+      {
+        "description": "",
+        "gridPos": {
+          "h": 8,
+          "w": 11,
+          "x": 0,
+          "y": 7
+        },
+        "id": 4,
+        "links": [
+          {
+            "title": "community Answer",
+            "url": "https://community.grafana.com/t/how-to-download-local-file-from-grafana/31402/2"
+          }
+        ],
+        "options": {
+          "content": "<!DOCTYPE html>\n<html>\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<style>\nul, #myUL {\n  list-style-type: none;\n}\n\n#myUL {\n  margin: 0;\n  padding: 0;\n}\n\n.box {\n  cursor: pointer;\n  -webkit-user-select: none; /* Safari 3.1+ */\n  -moz-user-select: none; /* Firefox 2+ */\n  -ms-user-select: none; /* IE 10+ */\n  user-select: none;\n}\n\n.box::before {\n  content: \"\\2610\";\n  color: white;\n  display: inline-block;\n  margin-right: 6px;\n}\n\n.check-box::before {\n  content: \"\\2611\"; \n  color: dodgerblue;\n}\n\n.nested {\n  display: none;\n}\n\n.active {\n  display: block;\n}\n</style>\n</head>\n<body>\n\n<ul id=\"myUL\">\n                          \n      <li><span class=\"box\"><img src=\"/public/img/cobhamSatcom/folder.png\" width=\"20\"/>Documents Folder</span>\n        <ul class=\"nested\">                                  <!--dropdown-->\n          <li><span class=\"box\"><img src=\"/public/img/cobhamSatcom/folder.png\" width=\"20\"/>Documents</span>\n             <ul class=\"nested\">\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 1</a> <br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 2</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 3</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 4</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 5</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 6</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 7</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 8</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 9</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 10</a><br>\n              </ul>\n           <li>\n           <li><span class=\"box\"><img src=\"/public/img/cobhamSatcom/folder.png\" width=\"20\"/>Documents</span>\n             <ul class=\"nested\">\n                  <a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 1</a> <br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 2</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 3</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 4</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 5</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 6</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 7</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 8</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 9</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 10</a><br>\n             </ul>\n            <li>\n         </ul>\n      </li>\n</ul>\n\n\n\n<script>\nvar toggler = document.getElementsByClassName(\"box\");\nvar i;\n\nfor (i = 0; i < toggler.length; i++) {\n  toggler[i].addEventListener(\"click\", function() {\n    this.parentElement.querySelector(\".nested\").classList.toggle(\"active\");\n    this.classList.toggle(\"check-box\");\n  });\n}\n</script>\n\n</body>\n</html>\n",
+          "mode": "html"
+        },
+        "pluginVersion": "8.3.3",
+        "title": "Download Links with images",
+        "type": "text"
+      },
+      {
+        "description": "",
+        "gridPos": {
+          "h": 8,
+          "w": 11,
+          "x": 11,
+          "y": 7
+        },
+        "id": 7,
+        "links": [
+          {
+            "title": "community Answer",
+            "url": "https://community.grafana.com/t/how-to-download-local-file-from-grafana/31402/2"
+          }
+        ],
+        "options": {
+          "content": "<!DOCTYPE html>\n<html>\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<style>\nul, #myUL {\n  list-style-type: none;\n}\n\n#myUL {\n  margin: 0;\n  padding: 0;\n}\n\n.box {\n  cursor: pointer;\n  -webkit-user-select: none; /* Safari 3.1+ */\n  -moz-user-select: none; /* Firefox 2+ */\n  -ms-user-select: none; /* IE 10+ */\n  user-select: none;\n}\n\n.box::before {\n  content: \"\\2610\";\n  color: white;\n  display: inline-block;\n  margin-right: 6px;\n}\n\n.check-box::before {\n  content: \"\\2611\"; \n  color: dodgerblue;\n}\n\n.nested {\n  display: none;\n}\n\n.active {\n  display: block;\n}\n</style>\n</head>\n<body>\n\n<ul id=\"myUL\">\n                          \n      <li><span class=\"box\">Documents Folder</span>\n        <ul class=\"nested\">                                  <!--dropdown-->\n          <li><span class=\"box\">Documents</span>\n             <ul class=\"nested\">\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 1</a> <br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 2</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 3</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 4</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 5</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 6</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 7</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 8</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 9</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 10</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download><img src=\"/public/img/cobhamSatcom/document.png\" width=\"20\"/>Document 10</a><br>\n              </ul>\n           <li>\n           <li><span class=\"box\">Documents</span>\n             <ul class=\"nested\">\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 1</a> <br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 2</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 3</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 4</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 5</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 6</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 7</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 8</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 9</a><br>\n<a href=\"http://localhost:8000/vamshiCobham.docs\" download>Document 10</a><br>\n             </ul>\n            <li>\n         </ul>\n      </li>\n</ul>\n\n\n\n<script>\nvar toggler = document.getElementsByClassName(\"box\");\nvar i;\n\nfor (i = 0; i < toggler.length; i++) {\n  toggler[i].addEventListener(\"click\", function() {\n    this.parentElement.querySelector(\".nested\").classList.toggle(\"active\");\n    this.classList.toggle(\"check-box\");\n  });\n}\n</script>\n\n</body>\n</html>\n",
+          "mode": "html"
+        },
+        "pluginVersion": "8.3.3",
+        "title": "Download Links",
+        "type": "text"
+      }
+    ],
+    "schemaVersion": 34,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "cobhamDownloadDocsTree",
+    "uid": "SohMt8E7z",
+    "version": 29,
+    "weekStart": ""
+  }
+}

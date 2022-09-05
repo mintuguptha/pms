@@ -1,0 +1,979 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "maindashboard-table-of-servers-experiment",
+    "url": "/d/_ZuN_rsnz/maindashboard-table-of-servers-experiment",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-04-04T16:00:30+05:30",
+    "updated": "2022-04-05T10:39:34+05:30",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 51,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 29,
+    "folderUid": "dQXdR3E7z",
+    "folderTitle": "section",
+    "folderUrl": "/dashboards/f/dQXdR3E7z/section",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 72,
+    "iteration": 1649135350365,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "center",
+              "displayMode": "auto"
+            },
+            "decimals": 2,
+            "displayName": "",
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Value #F"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "CPU used%"
+                },
+                {
+                  "id": "unit",
+                  "value": "percent"
+                },
+                {
+                  "id": "decimals",
+                  "value": 2
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background"
+                },
+                {
+                  "id": "custom.align"
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "rgba(50, 172, 45, 0.97)",
+                        "value": null
+                      },
+                      {
+                        "color": "rgba(237, 129, 40, 0.89)",
+                        "value": 70
+                      },
+                      {
+                        "color": "rgba(245, 54, 54, 0.9)",
+                        "value": 85
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Value #G"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Memory used%"
+                },
+                {
+                  "id": "unit",
+                  "value": "percent"
+                },
+                {
+                  "id": "decimals",
+                  "value": 2
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background"
+                },
+                {
+                  "id": "custom.align"
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "rgba(50, 172, 45, 0.97)",
+                        "value": null
+                      },
+                      {
+                        "color": "rgba(237, 129, 40, 0.89)",
+                        "value": 70
+                      },
+                      {
+                        "color": "rgba(245, 54, 54, 0.9)",
+                        "value": 85
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Value #H"
+              },
+              "properties": [
+                {
+                  "id": "displayName",
+                  "value": "Disk Used%"
+                },
+                {
+                  "id": "unit",
+                  "value": "percent"
+                },
+                {
+                  "id": "decimals",
+                  "value": 2
+                },
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background"
+                },
+                {
+                  "id": "custom.align"
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "rgba(50, 172, 45, 0.97)",
+                        "value": null
+                      },
+                      {
+                        "color": "rgba(237, 129, 40, 0.89)",
+                        "value": 10485760
+                      },
+                      {
+                        "color": "rgba(245, 54, 54, 0.9)",
+                        "value": 20485760
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "instance"
+              },
+              "properties": [
+                {
+                  "id": "links",
+                  "value": [
+                    {
+                      "targetBlank": true,
+                      "title": "",
+                      "url": "google.com"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "IO Used (%)"
+              },
+              "properties": [
+                {
+                  "id": "custom.displayMode",
+                  "value": "color-background-solid"
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "dark-green",
+                        "value": null
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "unit",
+                  "value": "percent"
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 7,
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "node_uname_info{instance=\"$instance\", job=\"$job\"} - 0",
+            "format": "table",
+            "instant": true,
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "(1 - avg(rate(node_cpu_seconds_total{instance=\"$instance\", job=\"$job\",mode=\"idle\"}[5m])) by (instance)) * 100",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "CPU",
+            "refId": "F"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "(1 - (node_memory_MemAvailable_bytes{instance=\"$instance\", job=\"$job\"} / (node_memory_MemTotal_bytes{instance=\"$instance\", job=\"$job\"})))* 100",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "",
+            "refId": "G"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\", instance=\"$instance\", job=\"$job\"} * 100)\n /node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\",instance=\"$instance\", job=\"$job\"})",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "",
+            "refId": "H"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "rate(node_disk_io_time_seconds_total{device=\"sda\",instance=\"$instance\", job=\"$job\"}[5m])",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "IO Used (%)",
+            "refId": "B"
+          }
+        ],
+        "title": "Server Resource Overview",
+        "transformations": [
+          {
+            "id": "merge",
+            "options": {
+              "reducers": []
+            }
+          },
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "Value #A": true,
+                "Value #D": true,
+                "device": true,
+                "domainname": true,
+                "fstype": true,
+                "instance": false,
+                "job": true,
+                "machine": true,
+                "mountpoint": true,
+                "nodename": true,
+                "release": true,
+                "sysname": true,
+                "version": true
+              },
+              "indexByName": {
+                "IO Used (%)": 16,
+                "Time": 0,
+                "Value #A": 9,
+                "Value #F": 10,
+                "Value #G": 11,
+                "Value #H": 15,
+                "device": 12,
+                "domainname": 1,
+                "fstype": 13,
+                "instance": 2,
+                "job": 3,
+                "machine": 4,
+                "mountpoint": 14,
+                "nodename": 5,
+                "release": 6,
+                "sysname": 7,
+                "version": 8
+              },
+              "renameByName": {}
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "center",
+              "displayMode": "auto"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Uptime"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "s"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Memory"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "bytes"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "CPU Used(%)"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "percent"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Memory used(%)"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "percent"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Disk (%)"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "percent"
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 24,
+          "x": 0,
+          "y": 4
+        },
+        "id": 5,
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "node_uname_info{job=\"node\"} - 0",
+            "instant": true,
+            "interval": "",
+            "legendFormat": "info",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "sum(time() - node_boot_time_seconds{job=~\"node\"})by(instance)",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "node_memory_MemTotal_bytes{job=~\"node\"} - 0",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "Memory",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "count(node_cpu_seconds_total{mode='system'}) by (instance)",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "",
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "(1 - avg(rate(node_cpu_seconds_total{job=\"node\",mode=\"idle\"}[5m])) by (instance)) * 100",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "",
+            "refId": "E"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "(1 - (node_memory_MemAvailable_bytes{job=~\"node\"} / (node_memory_MemTotal_bytes{job=~\"node\"})))* 100",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "",
+            "refId": "F"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": true,
+            "expr": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\"} * 100)\n /node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"})",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "",
+            "refId": "G"
+          }
+        ],
+        "title": "okay",
+        "transformations": [
+          {
+            "id": "labelsToFields",
+            "options": {}
+          },
+          {
+            "id": "seriesToColumns",
+            "options": {
+              "byField": "instance"
+            }
+          },
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "Time 2": true,
+                "Time 3": true,
+                "Time 4": true,
+                "Time 5": true,
+                "Time 6": true,
+                "Time 7": true,
+                "Value 1": true,
+                "Value 6": false,
+                "device": true,
+                "fstype": true,
+                "info": true,
+                "instance 2": false,
+                "job 2": true,
+                "job 3": true,
+                "job 4": true,
+                "mountpoint": true
+              },
+              "indexByName": {
+                "Time 1": 0,
+                "Time 2": 10,
+                "Time 3": 12,
+                "Time 4": 15,
+                "Time 5": 17,
+                "Time 6": 19,
+                "Time 7": 22,
+                "Value 1": 2,
+                "Value 2": 11,
+                "Value 3": 13,
+                "Value 4": 16,
+                "Value 5": 18,
+                "Value 6": 20,
+                "Value 7": 23,
+                "device": 24,
+                "domainname": 3,
+                "fstype": 25,
+                "instance": 1,
+                "job 1": 4,
+                "job 2": 14,
+                "job 3": 21,
+                "job 4": 26,
+                "machine": 5,
+                "mountpoint": 27,
+                "nodename": 6,
+                "release": 7,
+                "sysname": 8,
+                "version": 9
+              },
+              "renameByName": {
+                "Value 2": "Uptime",
+                "Value 3": "Memory",
+                "Value 4": "CPU Cores",
+                "Value 5": "CPU Used(%)",
+                "Value 6": "Memory used(%)",
+                "Value 7": "Disk (%)",
+                "instance": "IP (Link to address)",
+                "instance 2": "",
+                "nodename": "Host name",
+                "release": "",
+                "version": ""
+              }
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "center",
+              "displayMode": "auto"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 24,
+          "x": 0,
+          "y": 8
+        },
+        "id": 2,
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "frameIndex": 0,
+          "showHeader": true
+        },
+        "pluginVersion": "8.3.3",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "node_uname_info{job=\"node\"} - 0",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "",
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "sum(time() - node_boot_time_seconds{job=\"node\"})by(instance)",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "Uptime",
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "node_memory_MemTotal_bytes{instance=\"localhost:9100\", job=\"node\"} - 0",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "Total Memory",
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "count(node_cpu_seconds_total{job=\"node\",mode='system'}) by (instance)",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "cores",
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "node_load5{job=~\"node\"}",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "load5",
+            "refId": "E"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "(1 - avg(rate(node_cpu_seconds_total{mode=\"idle\"}[5m])) by (instance)) * 100",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "cpu utilization",
+            "refId": "F"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "(1 - (node_memory_MemAvailable_bytes{job=\"node\"} / (node_memory_MemTotal_bytes{job=\"node\"})))* 100",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "Memory Utilization",
+            "refId": "G"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "max((node_filesystem_size_bytes{job=~\"node\",fstype=~\"ext.?|xfs\"}-node_filesystem_free_bytes{job=~\"node\",fstype=~\"ext.?|xfs\"}) *100/(node_filesystem_avail_bytes {job=~\"node\",fstype=~\"ext.?|xfs\"}+(node_filesystem_size_bytes{job=~\"node\",fstype=~\"ext.?|xfs\"}-node_filesystem_free_bytes{job=~\"node\",fstype=~\"ext.?|xfs\"})))by(instance)",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "Filesystem",
+            "refId": "H"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "max(rate(node_disk_read_bytes_total{job=~\"node\"}[5m])) by (instance)",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "Read Bytes",
+            "refId": "I"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "max(rate(node_disk_written_bytes_total{job=~\"node\"}[5m])) by (instance)",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "Written Bytes",
+            "refId": "J"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "max(rate(node_network_receive_bytes_total{job=\"node\"}[5m])*8) by (instance)",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "Network received",
+            "refId": "M"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "wpysClP7z"
+            },
+            "exemplar": false,
+            "expr": "max(rate(node_network_transmit_bytes_total{job=~\"node\"}[5m])*8) by (instance)",
+            "hide": false,
+            "instant": true,
+            "interval": "",
+            "legendFormat": "Network transmit",
+            "refId": "N"
+          }
+        ],
+        "title": "Panel Title",
+        "transformations": [
+          {
+            "id": "seriesToColumns",
+            "options": {
+              "byField": "Time"
+            }
+          }
+        ],
+        "type": "table"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 34,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": true,
+            "text": [
+              "node"
+            ],
+            "value": [
+              "node"
+            ]
+          },
+          "definition": "label_values(node_uname_info, job)",
+          "hide": 0,
+          "includeAll": true,
+          "multi": true,
+          "name": "job",
+          "options": [],
+          "query": {
+            "query": "label_values(node_uname_info, job)",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "current": {
+            "selected": true,
+            "text": [
+              "localhost:9100"
+            ],
+            "value": [
+              "localhost:9100"
+            ]
+          },
+          "definition": "label_values(node_uname_info, instance)",
+          "hide": 0,
+          "includeAll": true,
+          "multi": true,
+          "name": "instance",
+          "options": [],
+          "query": {
+            "query": "label_values(node_uname_info, instance)",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "MainDashboard Table of servers (experiment)",
+    "uid": "_ZuN_rsnz",
+    "version": 51,
+    "weekStart": ""
+  }
+}

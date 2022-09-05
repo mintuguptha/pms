@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "syslog",
+    "url": "/d/eI3Z2grnk/syslog",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-05-25T18:47:52+05:30",
+    "updated": "2022-05-25T18:47:52+05:30",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 1,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 126,
+    "folderUid": "Ph-aWg9nk",
+    "folderTitle": "dummyDashboards",
+    "folderUrl": "/dashboards/f/Ph-aWg9nk/dummydashboards",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "hideControls": false,
+    "id": 130,
+    "links": [],
+    "liveNow": false,
+    "panels": [],
+    "schemaVersion": 34,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "syslog",
+    "uid": "eI3Z2grnk",
+    "version": 1,
+    "weekStart": ""
+  }
+}

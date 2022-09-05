@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "section2main",
+    "url": "/d/HpHr2Wynk/section2main",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-03-25T19:40:23+05:30",
+    "updated": "2022-04-06T14:55:01+05:30",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 14,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 29,
+    "folderUid": "dQXdR3E7z",
+    "folderTitle": "section",
+    "folderUrl": "/dashboards/f/dQXdR3E7z/section",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 49,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "gridPos": {
+          "h": 25,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "content": "<ul>\n    <li><span class=\"\">RNS</span><br>\n        <ul>\n            <li><span class=\"\">UE Terminal</span><br><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />UE LQR Reports</a><br>\n            <li><span class=\"\">BEAM</sapn><br><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />Beam1</a><br>\n            <li><span class=\"\">Carrier</span><br><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />Carrier1</a><br>\n        </ul>\n</ul>\n\n<ul>\n    <li> PTT <br>\n        <a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />PTT1 </a><br>\n</ul>\n\n<ul>\n    <li><span class=\"\"> GRM </span></br><a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />GRM1</a><br>\n    <li><span class=\"\"> Syslog </span><br>\n    <li><span class=\"\"> Server Platform </span><br>\n               <a href=\"\"><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />Server HW ilo/ipmi </a><br>\n               <a href=\"http://localhost:3000/d/h3JDYk87k/servertable?orgId=1&from=now-5m&to=now\" target=\"_blank\"><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" /> Linux </a><br>\n               <a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />Kubernetes </a><br>\n               <a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />Container </a><br>\n    <li><span class=\"\">PMS Application </span></br>\n                <a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />Prometheus </a><br>\n                <a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />Grafana </a></br>\n    <li><span class=\"\"> Database</span> <br>\n               <a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />PMS Database</a> <br>\n               <a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />RNS RMC Database</a><br>\n               <a><img src=\"public/img/cobhamSatcom/images.png\" width=\"20\" />RNS NMC Database</a><br>\n   </li>\n</ul>         ",
+          "mode": "html"
+        },
+        "pluginVersion": "8.3.3",
+        "title": "Performance Management System",
+        "type": "text"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 34,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "section2Main",
+    "uid": "HpHr2Wynk",
+    "version": 14,
+    "weekStart": ""
+  }
+}

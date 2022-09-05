@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "maindashboard-dynamiccontent-old",
+    "url": "/d/5LWY90Enz/maindashboard-dynamiccontent-old",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-03-22T11:33:36+05:30",
+    "updated": "2022-03-25T11:49:35+05:30",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 14,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 40,
+    "folderUid": "BsLfbis7z",
+    "folderTitle": "Demo",
+    "folderUrl": "/dashboards/f/BsLfbis7z/demo",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 16,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "gridPos": {
+          "h": 16,
+          "w": 6,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "content": "<!DOCTYPE html>\n<html>\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<style>\nul, #myUL {\n  list-style-type: none;\n}\n\n#myUL {\n  margin: 0;\n  padding: 0;\n}\n\n.box {\n  cursor: pointer;\n  -webkit-user-select: none; /* Safari 3.1+ */\n  -moz-user-select: none; /* Firefox 2+ */\n  -ms-user-select: none; /* IE 10+ */\n  user-select: none;\n}\n\n.box::before {\n  content: \"\\2610\";\n  color: white;\n  display: inline-block;\n  margin-right: 6px;\n}\n\n.check-box::before {\n  content: \"\\2611\"; \n  color: dodgerblue;\n}\n\n.nested {\n  display: none;\n}\n\n.active {\n  display: block;\n}\n</style>\n</head>\n<body>\n\n<ul id=\"myUL\">\n<!--servers-->\n  <li><span class=\"box\">Servers</span>\t\t<!--servers box-->\n    <ul class=\"nested\">                          <!--dropdown-->\n      <li><a href=\"http://localhost:3000/d/cdOqC_Pnk/server1?orgId=1\" target=\"iframe_v\">Server 01</a></li>\n      <li><a href=\"http://localhost:3000/d/9-L3jlEnk/server2?orgId=1\" target=\"iframe_v\">Server 02</a></li>\n      <li><a href=\"http://localhost:3000/d/bOV6j_P7z/server3?orgId=1\" target=\"iframe_v\">Server 03</a></li>\n      <li><a href=\"http://localhost:3000/d/I9oejlP7z/server4?orgId=1\" target=\"iframe_v\">Server 04</a></li>\n      <li><a href=\"http://localhost:3000/d/WfQ6jlP7z/server5?orgId=1\" target=\"iframe_v\">Server 05</a></li>\n      <li><span class=\"box\">Virtual Machines</span>    <!--virtual machine box-->\n        <ul class=\"nested\">                                 <!--dropdown-->\n          <li><li><a href=\"#\" target=\"iframe_v\">Virtual Machine 01</a><li></li>\n          <li><li><a href=\"#\" target=\"iframe_v\">Virtual Machine 02</a><li></li>\n\t<li><li><a href=\"#\" target=\"iframe_v\">Virtual Machine 03</a><li></li>\n\t<li><li><a href=\"#\" target=\"iframe_v\">Virtual Machine 04</a><li></li>\n\t<li><li><a href=\"#\" target=\"iframe_v\">Virtual Machine 05</a><li></li>\n        </ul>\n      </li>  \n    </ul>\n  </li>\n<!--Applications-->\n  <li><span class=\"box\">Applications</span>\t\t<!--servers box-->\n    <ul class=\"nested\">                          <!--dropdown-->\n      <li><span class=\"box\">PMS</span>          <!--virtual machine box-->\n        <ul class=\"nested\">                                  <!--dropdown-->\n          <li><span class=\"box\">Server Monitoring</span>\n             <ul class=\"nested\">\n                  <li><a href=\"http://localhost:3000/d/hs8_6ZPnk/server-monitoring?orgId=1\" target=\"iframe_v\">CPU</a></li>\n\t\t  <li><a href=\"http://localhost:3000/d/meprJZEnk/memory?orgId=1\" target=\"iframe_v\">Memory</a><li>\n                  <li><a href=\"http://localhost:3000/d/fKKwbZP7z/disk?orgId=1\" target=\"iframe_v\">Disk</a></li>\n                  <li><a href=\"http://localhost:3000/d/3fCJ-ZE7z/io?orgId=1\" target=\"iframe_v\">IO</a></li>\n                  <li><a href=\"#\" target=\"iframe_v\">Syslog</a></li>\n              </ul>\n           <li>\n           <li><span class=\"box\">Application Monitoring</span>\n             <ul class=\"nested\">\n                  <li><a href=\"http://localhost:3000/d/EMI2BWP7z/grafana?orgId=1\" target=\"iframe_v\">Grafana</a></li>\n\t\t  <li><a href=\"http://localhost:3000/d/AMKrfZPnz/prometheus?orgId=1\" target=\"iframe_v\">Prometheus</a><li>\n             </ul>\n            <li>\n         </ul>\n      </li>\n      <li><li><a href=\"#\" target=\"iframe_v\">RNS</a><li></li>\n      <li><li><a href=\"#\" target=\"iframe_v\">PTT</a><li></li>\n      <li><a href=\"http://localhost:8088\" target=\"iframe_v\">Alerta</a></li>\n      <li><li><a href=\"#\" target=\"iframe_v\">Zabbix</a><li></li>\n    </ul>\n  </li>\n</ul>\n<!--Switches-->\n<li><span class=\"box\">Switches</span>\t\t\n    <ul class=\"nested\">                          \n      <li><a href=\"#\" target=\"iframe_v\">Switches 01</a></li>\n      <li><a href=\"#\" target=\"iframe_v\">Switches 02</a></li>\n      <li><a href=\"#\" target=\"iframe_v\">Switches 03</a></li>\n      <li><a href=\"#\" target=\"iframe_v\">Switches 04</a></li>\n      <li><a href=\"#\" target=\"iframe_v\">Switches 05</a></li>\n    </ul>\n </li>\n<!--powersupply-->\n<li><span class=\"box\">Power Supply</span>\t\t\n    <ul class=\"nested\">                          \n      <li><a href=\"#\" target=\"iframe_v\">PowerSupply 01</a></li>\n      <li><a href=\"#\" target=\"iframe_v\">PowerSupply 02</a></li>\n      <li><a href=\"#\" target=\"iframe_v\">PowerSupply 03</a></li>\n      <li><a href=\"#\" target=\"iframe_v\">PowerSupply 04</a></li>\n      <li><a href=\"#\" target=\"iframe_v\">PowerSupply 05</a></li>\n    </ul>\n</li>\n<!--Applifiers-->\n<li><span class=\"box\">Amplifiers</span>\t\t\n    <ul class=\"nested\">                          \n      <li><a href=\"#\" target=\"iframe_v\">Amplifiers 01</a></li>\n      <li><a href=\"#\" target=\"iframe_v\">Amplifiers 02</a></li>\n      <li><a href=\"#\" target=\"iframe_v\">Amplifiers 03</a></li>\n      <li><a href=\"#\" target=\"iframe_v\">Amplifiers 04</a></li>\n      <li><a href=\"#\" target=\"iframe_v\">Amplifiers 05</a></li>\n    </ul>\n</li>\n\n<script>\nvar toggler = document.getElementsByClassName(\"box\");\nvar i;\n\nfor (i = 0; i < toggler.length; i++) {\n  toggler[i].addEventListener(\"click\", function() {\n    this.parentElement.querySelector(\".nested\").classList.toggle(\"active\");\n    this.classList.toggle(\"check-box\");\n  });\n}\n</script>\n\n</body>\n</html>\n",
+          "mode": "html"
+        },
+        "pluginVersion": "8.3.3",
+        "title": "Dashboard Links",
+        "type": "text"
+      },
+      {
+        "gridPos": {
+          "h": 16,
+          "w": 18,
+          "x": 6,
+          "y": 0
+        },
+        "id": 4,
+        "options": {
+          "content": "<iframe\nsrc=\"http://localhost:3000/d/cdOqC_Pnk/server1?orgId=1\"\n name=\"iframe_v\" height=\"580\" width=\"100%\"></iframe>",
+          "mode": "html"
+        },
+        "pluginVersion": "8.3.3",
+        "type": "text"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 34,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "MainDashboard dynamicContent (old)",
+    "uid": "5LWY90Enz",
+    "version": 14,
+    "weekStart": ""
+  }
+}

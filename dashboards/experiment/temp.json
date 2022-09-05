@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "type": "db",
+    "canSave": true,
+    "canEdit": true,
+    "canAdmin": true,
+    "canStar": true,
+    "slug": "temp",
+    "url": "/d/Xs0ydhunk/temp",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2022-05-18T18:02:19+05:30",
+    "updated": "2022-06-24T16:35:06+05:30",
+    "updatedBy": "admin",
+    "createdBy": "admin",
+    "version": 24,
+    "hasAcl": false,
+    "isFolder": false,
+    "folderId": 24,
+    "folderUid": "nXj55uPnk",
+    "folderTitle": "experiment",
+    "folderUrl": "/dashboards/f/nXj55uPnk/experiment",
+    "provisioned": false,
+    "provisionedExternalId": ""
+  },
+  "dashboard": {
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 123,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "gridPos": {
+          "h": 25,
+          "w": 11,
+          "x": 0,
+          "y": 0
+        },
+        "id": 6,
+        "options": {
+          "content": "<style>\n  td{\n    height: 50px;\n  }\n  </style>\n<table>\n<!--RNS first row-->\n<tr>\n  <td rowspan=\"3\"><b>RNS<b></td>\n  <td></td>\n  <td></td>\n<tr>\n<!--RNS second row-->\n<tr>\n   <td>UE Terminal <br> <a href=\"\"> UE LQR Reports</a></td>\n   <td>BEAM <br><a href=\"\"> Beam 1</a></td>\n   <td>CARRIER <br><a href=\"\"> Carrier 1</a></td>\n</tr>\n</table>\n\n<!--ptt table-->\n<table>\n  <tr>\n    <td rowspan=\"2\"><b>PTT</b></td>\n    <td></td>\n  </tr>\n  <tr>\n    <td><a href=\"\">PTT-1</a></td>\n  </tr>\n</table>\n<!--grm table-->\n<table>\n  <tr>\n    <td rowspan=\"2\"><b>GRM</b></td>\n    <td></td>\n  </tr>\n  <tr>\n    <td><a href=\"\">GRM-1</a></td>\n  </tr>\n</table>\n\n<!--Syslog-->\n<table>\n  <tr>\n    <td rowspan=\"2\"><b>Syslog</b></td>\n    <td></td>\n  </tr>\n  <tr>\n    <td><a href=\"\">Logs</a></td>\n  </tr>\n</table>\n\n<!--Server Platform-->\n<table>\n    <td rowspan=\"2\"><b>Server Platform</b></td>\n    <td></td>\n  </tr>\n  <tr>\n    <td> <a href=\"\">Server HW ilo/ipmi</a></td>\n    <td> <a href=\"\">Linux</a></td>\n    <td> <a href=\"\">Kubernetes</a></td>\n    <td> <a href=\"\">Container</a></td>\n  </tr>\n</table>\n\n<!--PMS Application-->\n<table>\n  <tr>\n    <td rowspan=\"2\"><b>PMS Application</b></td>\n    <td></td>\n  </tr>\n  <tr>\n    <td><a href=\"\">Prometheus</a></td>\n    <td><a href=\"\">Grafana</a></td>\n  </tr>\n</table>\n\n<!--Database-->\n<table>\n  <tr>\n    <td rowspan=\"2\"><b>Database</b></td>\n    <td></td>\n  </tr>\n  <tr>\n    <td><a href=\"\">PMS Database</a></td>\n    <td><a href=\"\">RNS RMC Database</a></td>\n    <td><a href=\"\">RNS NMS Database</a></td>\n  </tr>\n</table>",
+          "mode": "html"
+        },
+        "pluginVersion": "8.3.3",
+        "type": "text"
+      },
+      {
+        "gridPos": {
+          "h": 3,
+          "w": 5,
+          "x": 13,
+          "y": 0
+        },
+        "id": 8,
+        "links": [],
+        "options": {
+          "content": "<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js'></script>\n<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.0.2/jszip-utils.min.js'></script>\n<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js'></script>\n\n<script type='text/javascript'>\nfunction resetMessage () {\n    $(\"#result\")\n    .removeClass()\n    .text(\"\");\n    $(\"#apiresult2\")\n    .removeClass()\n    .text(\"\");\n}\nfunction showMessage(text, id) {\n    resetMessage();\n    $(id)\n    .addClass(\"alert alert-success\")\n    .text(text);\n}\nfunction showError(text, id) {\n    resetMessage();\n    $(id)\n    .addClass(\"alert alert-danger\")\n    .text(text);\n}\nfunction updatePercent(percent) {\n    $(\"#progress_bar\").removeClass(\"hide\")\n    .find(\".progress-bar\")\n    .attr(\"aria-valuenow\", percent)\n    .css({\n        width : percent + \"%\"\n    });\n}\n\nfunction urlToPromise(url) {\n    return new Promise(function(resolve, reject) {\n        JSZipUtils.getBinaryContent(url, function (err, data) {\n            if(err) {\n                reject(err);\n            } else {\n                resolve(data);\n            }\n        });\n    });\n}\n\nvar $form = $(\"#download_form\").on(\"submit\", function () {\n\n    resetMessage();\n    showMessage(\"Starting export ...\", \"#result\");\n    if(!JSZip.support.blob) {\n      showError(\"Sorry, this Grafana dashboard works only with a recent browser !\");\n      return;\n    }\n    var Promise = window.Promise;\n    if (!Promise) {\n      Promise = JSZip.external.Promise;\n    }\n\n    var zip = new JSZip();\n\n    // get all dashboards\n    $.ajax({\n        type: 'GET',\n        url: '/api/search',\n        data: 'query=&type',\n        dataType: 'json',\n        async: false,\n        success: function (data) {\n            $.each(data, function(index, el) {\n              if ('folderTitle' in el) {\n                zipname = el.folderTitle.replace(/[:/]{1}/g,\"-\") + '/' + el.title.replace(/[:/]{1}/g,\"-\") + '.json';\n              } else {\n                zipname = el.title.replace(/[:/]{1}/g,\"-\") + '.json';\n              }\n              zip.file(zipname, urlToPromise(\"/api/dashboards/uid/\" + el.uid), {binary:true});\n            });\n        }\n    });\n\n    // when everything has been downloaded, we can trigger the dl\n    zip.generateAsync({type:\"blob\"}, function updateCallback(metadata) {\n        var msg = \"Exporting: \" + metadata.percent.toFixed(2) + \" %\";\n        if(metadata.currentFile) {\n            msg += \", processing dashboard: \" + metadata.currentFile;\n        }\n        showMessage(msg, \"#result\");\n        updatePercent(metadata.percent|0);\n    })\n    .then(function callback(blob) {\n        filename = \"grafana-dashboards-\" + new Date().getTime() + \".zip\";\n        saveAs(blob, filename);\n        showMessage(\"Done!\", \"#result\");\n    }, function (e) {\n        showError(e);\n    });\n\n    return false;\n});\n</script>\n\n<form action=\"#\" id=\"download_form\">\n    <button type=\"submit\" class=\"btn btn-primary\"><i class=\"fa fa-save\"></i> Download all dashboards</button>\n    <br/><br/>\n</form>\n\n<div class=\"progress hide\" id=\"progress_bar\">\n    <div class=\"progress-bar\" role=\"progressbar\" aria-valuenow=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 0%;\">\n    </div>\n</div>\n\n<p class=\"hide\" id=\"result\"></p>",
+          "mode": "html"
+        },
+        "pluginVersion": "8.3.3",
+        "transparent": true,
+        "type": "text"
+      }
+    ],
+    "schemaVersion": 34,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "temp",
+    "uid": "Xs0ydhunk",
+    "version": 24,
+    "weekStart": ""
+  }
+}
