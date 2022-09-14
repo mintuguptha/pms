@@ -9,8 +9,7 @@ contexts:
         password: admin
         organization: ""
         watched:
-            - UpdatedDashboards
-            - RNS
+            - General
         datasources:
             filters: null
             credentials: {}

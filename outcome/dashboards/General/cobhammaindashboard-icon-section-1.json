@@ -1,0 +1,62 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations \u0026 Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 37,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "gridPos": {
+        "h": 20,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "content": "\u003c!DOCTYPE html\u003e\n\u003chtml\u003e\n\u003chead\u003e\n\u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1\"\u003e\n\u003cstyle\u003e\nul, #myUL {\n  list-style-type: none;\n}\n\n#myUL {\n  margin: 0;\n  padding: 0;\n}\n\n\n.active {\n  display: block;\n}\n\u003c/style\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n\n\u003cul id=\"myUL\"\u003e\n      \u003cli\u003e\u003cspan class=\"box\" \u003eNetwork Management\u003c/span\u003e          \u003c!--virtual machine box--\u003e\n             \u003cul class=\"nested\"\u003e\n                  \u003cli\u003e\u003ca href=\"http://localhost:3000/d/8jWz7qPnk/cobhammaindashboard-icon-section-2?orgId=1\" target=\"_blank\"\u003e\u003cimg src=\"public/img/cobhamSatcom/images.png\" width=\"20\" /\u003ePMS-Performance Monitoring System\u003c/a\u003e\u003c/li\u003e\n\t\t  \u003cli\u003e\u003ca\u003e\u003cimg src=\"public/img/cobhamSatcom/images.png\" width=\"20\" /\u003eFMS-Performance Monitoring System\u003c/a\u003e\u003cli\u003e\n                  \u003cli\u003e\u003ca\u003e\u003cimg src=\"public/img/cobhamSatcom/images.png\" width=\"20\" /\u003eRNS-Radio Network Station\u003c/a\u003e\u003c/li\u003e\n                  \u003cli\u003e\u003ca\u003e\u003cimg src=\"public/img/cobhamSatcom/images.png\" width=\"20\" /\u003ePTT-Push To Talk\u003c/a\u003e\u003c/li\u003e\n                  \u003cli\u003e\u003ca\u003e\u003cimg src=\"public/img/cobhamSatcom/images.png\" width=\"20\" /\u003eGRM-Global Resource Manager\u003c/a\u003e\u003c/li\u003e           \n              \u003c/ul\u003e\n           \u003cli\u003e\n      \u003cli\u003e\u003cspan class=\"box\" \u003eServer Management\u003c/span\u003e\n             \u003cul class=\"nested\"\u003e\n                  \u003cli\u003e\u003ca\u003e\u003cimg src=\"public/img/cobhamSatcom/images.png\" width=\"20\" /\u003eBlade1 oneview\u003c/a\u003e\u003c/li\u003e\n\t\t  \u003cli\u003e\u003ca\u003e\u003cimg src=\"public/img/cobhamSatcom/images.png\" width=\"20\" /\u003eServer2 ilo\u003c/a\u003e\u003cli\u003e\n                  \u003cli\u003e\u003ca\u003e\u003cimg src=\"public/img/cobhamSatcom/images.png\" width=\"20\" /\u003eServer3 ilo\u003c/a\u003e\u003c/li\u003e\n             \u003c/ul\u003e\n           \u003cli\u003e\n      \u003cli\u003e\u003cspan class=\"box\" \u003eServices\u003c/span\u003e\n             \u003cul class=\"nested\"\u003e\n                  \u003cli\u003e\u003ca\u003e\u003cimg src=\"public/img/cobhamSatcom/images.png\" width=\"20\" /\u003ePostgreSQL UI\u003c/a\u003e\u003c/li\u003e\n\t\t  \u003cli\u003e\u003ca\u003e\u003cimg src=\"public/img/cobhamSatcom/images.png\" width=\"20\" /\u003eKubernetes UI\u003c/a\u003e\u003cli\u003e\n                  \u003cli\u003e\u003ca\u003e\u003cimg src=\"public/img/cobhamSatcom/images.png\" width=\"20\" /\u003ePrometheus UI\u003c/a\u003e\u003c/li\u003e\n             \u003c/ul\u003e\n           \u003cli\u003e\n      \u003cli\u003e\u003cspan class=\"box\" \u003eRF Management\u003c/span\u003e\n             \u003cul class=\"nested\"\u003e\n                  \u003cli\u003e\u003ca\u003e\u003cimg src=\"public/img/cobhamSatcom/images.png\" width=\"20\" /\u003eRF Amplifier1\u003c/a\u003e\u003c/li\u003e\n             \u003c/ul\u003e\n           \u003cli\u003e\n      \u003cli\u003e\u003cspan class=\"box\" \u003eRemote Power Strips\u003c/span\u003e\n             \u003cul class=\"nested\"\u003e\n                \u003cli\u003e\u003ca\u003e\u003cimg src=\"public/img/cobhamSatcom/images.png\" width=\"20\" /\u003ePower Supply Rack1\u003c/a\u003e\u003c/li\u003e\n             \u003c/ul\u003e\n           \u003cli\u003e\n        \n\n\n\u003c/body\u003e\n\u003c/html\u003e\n",
+        "mode": "html"
+      },
+      "pluginVersion": "8.3.3",
+      "title": "Management UI",
+      "type": "text"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 34,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "CobhamMainDashBoard-Icon-Section-1",
+  "uid": "_lRR7qE7k",
+  "version": 9,
+  "weekStart": ""
+}
