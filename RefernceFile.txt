@@ -1,0 +1,9 @@
+#Create a new context 
+
+To import 
+
+#create a context
+./gdg ctx new mycontext
+
+#Now import the dashboards
+./bin/gdg dash import
