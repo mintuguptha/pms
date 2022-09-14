@@ -1,0 +1,101 @@
+context_name: mycontext
+contexts:
+    mycontext:
+        adminenabled: true
+        ignore_filters: false
+        url: http://localhost:3000/
+        token: ""
+        user_name: admin
+        password: admin
+        organization: ""
+        watched:
+            - UpdatedDashboards
+            - RNS
+        datasources:
+            filters: null
+            credentials: {}
+        output_path: outcome
+    production:
+        adminenabled: false
+        ignore_filters: false
+        url: https://grafana.com
+        token: ""
+        user_name: admin
+        password: admin
+        organization: your-org
+        watched:
+            - General
+        datasources:
+            filters: null
+            credentials:
+                complex name:
+                    user: test
+                    password: secret
+                    url_regex: ""
+                default:
+                    user: user
+                    password: password
+                    url_regex: ""
+                ds_name:
+                    user: abcd
+                    password: secret
+                    url_regex: ""
+        output_path: prod
+    qa:
+        adminenabled: false
+        ignore_filters: false
+        url: https://staging.grafana.com
+        token: <CHANGEME>
+        user_name: ""
+        password: ""
+        organization: your-org
+        watched:
+            - Folder1
+            - Folder2
+        datasources:
+            filters: null
+            credentials:
+                complex name:
+                    user: test
+                    password: secret
+                    url_regex: ""
+                default:
+                    user: user
+                    password: password
+                    url_regex: ""
+                ds_name:
+                    user: abcd
+                    password: secret
+                    url_regex: ""
+        output_path: qa
+    testing:
+        adminenabled: false
+        ignore_filters: false
+        url: http://grafana:3000
+        token: ""
+        user_name: admin
+        password: admin
+        organization: ""
+        watched:
+            - General
+            - Other
+        datasources:
+            filters:
+                name_exclusions: DEV-*|-Dev-*
+                valid_types:
+                    - elasticsearch
+            credentials:
+                default:
+                    user: user
+                    password: password
+                    url_regex: ""
+                misc:
+                    user: admin
+                    password: secret
+                    url_regex: .*esproxy2*
+        output_path: testing_data
+global:
+    debug: true
+    ignore_ssl_errors: false
+json_logs: false
+loglevel: debug
